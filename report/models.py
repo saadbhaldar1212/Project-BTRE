@@ -4,7 +4,6 @@ from realtors.models import Realtor
 from listings.models import Listing
 from contacts.models import Contact
 
-
 # from accounts.models import U
 
 

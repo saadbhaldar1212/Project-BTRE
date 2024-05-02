@@ -1,22 +1,12 @@
 from django.contrib import admin
-from django.http import HttpResponse
-from django.urls import path
-from report.models import Report
 
 from .models import Report
 
-from realtors.admin import RealtorAdmin
 
-
+@admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "realtor",
-        "contact",
-        "listings",
-    )
-    search_fields = ("name",)
-    list_per_page = 25
+    name_display = ("name",)
+    report_display = ("name", "realtor", "contact", "listing")
 
 
-admin.site.register(Report, ReportAdmin)
+# admin.site.register(Report, ReportAdmin)
